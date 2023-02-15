@@ -4,10 +4,13 @@
       <div class="col-9">
         <input class="form-control" [(ngModel)]="currentPokemonName" type="text" placeholder="bulbizarre"/>
       </div>
+      
       <div class="col-3">
-        <button class="btn btn-primary">Ajouter</button>
+        <button class="btn btn-primary" (click)="addPokemon()">Ajouter</button>
       </div>
     </div>
+
+    <app-pokemon-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon"/>
     
-    {{ currentPokemonName }}
+    
 </div>

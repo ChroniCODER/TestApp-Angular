@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Pokemon } from './models/pokemon';
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TestApp';
-  currentPokemonName = ''; 
+  currentPokemonName = '';
+  pokemons: Pokemon [] = [];
+
+  addPokemon() {
+    this.pokemons.push ({
+      name:this.currentPokemonName,
+      gender: Math.random() < 0.5 ? 'male' : 'female'
+    })
+  }
 }
